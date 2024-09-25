@@ -35,3 +35,23 @@ document.write(`ehDoador: ${ehDoador}`)
 document.write("<p>teste: " + teste + "</p>")
 document.write(`PI: ${PI}`)
 document.write("<p>taxa: " + TAXA + "</p>")
+
+
+/*Operadores*/
+let n1 = 10
+let n2 = 2
+let n3 = "2"
+document.write(`N1 ${n1} <br>`)
+document.write(`N1 ${n2} <br>`)
+document.write(`N1 ${n3} <br>`)
+
+console.log(n1 + n2)
+console.log(n1 - n2)
+console.log(n1 * n2)
+console.log(n1 / n2)
+console.log(n1 % n2)
+
+console.log(n2 == n3)
+console.log(n2 === n3)
+console.log(n2 != n3)
+console.log(n2 !== n3)
