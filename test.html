@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de IMC</title>
+</head>
+<body>
+
+    <h1>Cálculo de IMC</h1>
+    <button onclick="calcularIMC()">Calcular IMC</button>
+
+    <div id="resultado"></div>
+   <script>
+           let pessoa = {
+            nome: 'Edson',
+            idade: 40,
+            peso: 83,
+            altura: 1.75,
+            doador: false
+        };
+
+        function calcularIMC() {
+            let imc = pessoa.peso / (pessoa.altura * pessoa.altura);
+            let imcFormatado = imc.toFixed(2);
+
+            document.getElementById('resultado').innerHTML = `nome: ${pessoa.nome} <br>
+            idade: ${pessoa.idade} anos <br>
+            Imc: ${imcFormatado}`
+        }
+   </script> 
+</body>
+</html>
