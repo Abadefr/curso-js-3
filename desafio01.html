@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de IMC</title>
+</head>
+<body>
+
+    <h1>informações</h1>
+    <p id="lutador"></p>
+    <h2>Mensagem do dia</h2>
+    <p id="mensagem"></p>
+    <h2> Jogo do ano</h2>
+    <p id="jogo"></p>
+    <h2> Meses do ano</h2>
+    <p id="meses"></p>
+   <script>
+       let lutador = {
+        nome: 'Fedor Vladimirovich Emelianenko',
+        nacionalidade: 'Russo',
+        idade: 44,
+        peso: 106,
+        altura:1.85
+       }
+       document.getElementById('lutador').innerHTML = `Lutador: ${lutador.nome} <br>
+       Nacionalidade: ${lutador.nacionalidade} <br>
+       Idade: ${lutador.idade} <br>
+       Altura: ${lutador.altura} <br>`
+
+       const dia = 10
+       const mes = 9
+       const ano = 2021
+       const mensagem = "Seja curioso, Leia de tudo. Tente coisas novas. O que as pessoas chamam de inteligência se resume a curiosidade."
+       const author = "Aron Swartz"
+
+       document.getElementById('mensagem').innerHTML = `Data:${dia}/${mes}/${ano} <br>
+       ${mensagem}. <br>
+       Author:${author} <br> `
+
+
+       let jogo = {
+        nome:'League of Legends',
+        desenvolvedor: 'Riot Games',
+        anodelancamento: 2009
+       }
+
+       document.getElementById('jogo').innerHTML = `Jogo: ${jogo.nome} <br>
+       Desenvolvedor: ${jogo.desenvolvedor} <br>
+       Ano de lançamento: ${jogo.anodelancamento}`
+
+       let mesesano = ['Janeiro', ' Fevereiro', ' Março ' ]
+       document.getElementById('meses').innerHTML =`Meses do ano: ${mesesano} <br><br>`
+
+       /*document.write(`mensagem2: ${mensagem2}`)
+        document.getElementById('resultado').innerHTML = `nome: ${pessoa.nome} <br>
+            idade: ${pessoa.idade} anos <br>
+            Imc: ${imcFormatado}`
+       */
+   </script> 
+</body>
+</html>
