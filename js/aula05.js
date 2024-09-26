@@ -30,3 +30,15 @@ pessoa.altura
 
 //Da pra fazer operaçoes:
 let imc = pessoa.peso / (pessoa.altura * pessoa.altura)
+
+//atualizar valor de propriedade
+pessoa.nome = "Edson maia"
+produtos.descricao = ['Arroz']
+produtos.preco = [7.50]
+produtos.descricao = [...produtos.descricao, 'feijao', 'trigo']
+produtos.preco = [... produtos.preco, 9.99, 7.0]
+
+
+carros.marca = [...carros.marca, 'wv']
+carros.modelo = [...carros.modelo, 'fusca']
+carros.marca = [...carros.marca, '1974']
