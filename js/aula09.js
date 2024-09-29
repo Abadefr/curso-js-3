@@ -35,3 +35,5 @@ function modoLight () {
     tela.classList.add("light")
     tela.classList.remove("dark")
 }
+
+document.write('Hello World')
