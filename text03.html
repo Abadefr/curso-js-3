@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Simples</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #chat { border: 1px solid #ccc; padding: 10px; max-width: 400px; margin: auto; }
+        #messages { height: 200px; overflow-y: scroll; border: 1px solid #ccc; margin-bottom: 10px; padding: 5px; }
+        .user { color: blue; }
+        .bot { color: green; }
+    </style>
+</head>
+<body>
+
+<div id="chat">
+    <div id="messages"></div>
+    <input type="text" id="input" placeholder="Digite sua mensagem..." />
+    <button onclick="sendMessage()">Enviar</button>
+</div>
+
+<script>
+    const messages = document.getElementById('messages');
+    const input = document.getElementById('input');
+
+    function sendMessage() {
+        const userMessage = input.value;
+        if (userMessage.trim() === "") return;
+
+        addMessage(userMessage, 'user');
+        input.value = '';
+
+        const botResponse = getBotResponse(userMessage);
+        addMessage(botResponse, 'bot');
+    }
+
+    function addMessage(message, sender) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = sender;
+        messageDiv.textContent = message;
+        messages.appendChild(messageDiv);
+        messages.scrollTop = messages.scrollHeight; // Scroll para o fundo
+    }
+
+    function getBotResponse(input) {
+        const lowerInput = input.toLowerCase();
+
+        if (lowerInput.includes('oi')) {
+            return 'Olá! Como posso ajudar?';
+        } else if (lowerInput.includes('como você está')) {
+            return 'Estou aqui, pronto para ajudar!';
+        } else if (lowerInput.includes('tchau')) {
+            return 'Até logo!';
+        } else {
+            return 'Desculpe, não entendi isso.';
+        }
+    }
+</script>
+
+</body>
+</html>
