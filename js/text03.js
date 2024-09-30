@@ -1,7 +1,8 @@
 
 
+let calcul = document.querySelector("#calcular")
 
-function calcularIMC () {
+calcul.addEventListener("click", function () {
      let nome = document.querySelector("#nome").value
      let altura = document.querySelector("#altura").value
      let peso = document.querySelector("#peso").value
@@ -13,9 +14,8 @@ function calcularIMC () {
           document.querySelector(".resultado").textContent = `Olá ${nome}, tá de sacanagem? coloque um valor válido`
      }
 
-}
-let calcul = document.querySelector("#calcular")
-calcul.addEventListener("click", calcularIMC)
+})
+
 
 
 
