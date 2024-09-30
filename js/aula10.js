@@ -51,6 +51,9 @@ titulo.addEventListener("click", function() {
     console.log("Eu sei que você deu click")
 })
 
+/* Arrow Functions ES6 2015 em diante */
+//Não precisa usar a palavra return
+//não precisa coloca{ } se não for uma intrução
 const olaMundoArrow = () => document.write("Olá mundo!")
 
 
