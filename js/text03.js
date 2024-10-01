@@ -1,5 +1,22 @@
 
+let calcul = document.querySelector("#calcular")
+calcul.addEventListener("click", function () {
+     let nome = document.querySelector("#nome").value
+     let peso = document.querySelector("#peso").value
+     let altura = document.querySelector("#altura").value
 
+     let imc = peso / (altura * altura)
+     
+     if (nome && peso && altura ) {
+          document.querySelector(".resultado").textContent = `Olá, ${nome}, seu IMC é: ${imc.toFixed(2)}`
+     }else {
+          document.querySelector(".resultado").textContent = `Olá, tá de sacanagem? coloque um valor válido!` 
+     }
+})
+
+
+
+/*
 let calcul = document.querySelector("#calcular")
 
 calcul.addEventListener("click", function () {
@@ -14,7 +31,7 @@ calcul.addEventListener("click", function () {
           document.querySelector(".resultado").textContent = `Olá ${nome}, tá de sacanagem? coloque um valor válido`
      }
 
-})
+})*/
 
 
 
