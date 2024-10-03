@@ -20,10 +20,6 @@ calcul.addEventListener("click", function () {
 
 
 
-
-
-
-
 /*let calcul = document.querySelector("#calcular")
 calcul.addEventListener("click", function () {
     
