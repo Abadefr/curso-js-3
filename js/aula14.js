@@ -15,11 +15,12 @@ let bntLimpar = document.querySelector("#btnLimpar");
 /* Adicionando escutador para o btnEnviar */
 bntEnviar.addEventListener("click", function (e) {
     // Evitar que o formulário seja enviado/recarregado
-    e.preventDefault();  // Corrigido aqui
+    e.preventDefault();
+      // Corrigido aqui
 
     // Pegar os valores de cada input
     let nome = cxNome.value;
-    let idade = cxIdade.value;
+    let idade = parseFloat(cxIdade.value);
     let peso = parseFloat(cxPeso.value);  // Certifique-se que está pegando números
     let altura = parseFloat(cxAltura.value);  // Certifique-se que está pegando números
 
