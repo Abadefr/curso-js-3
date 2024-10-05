@@ -4,11 +4,11 @@ let aviso = document.querySelector('#aviso')
 let formulario = document.querySelector('#form')
 
 let btnCalcular = document.querySelector('#btnCalcular')
-let btnLinpar = document.querySelector('#btnLinpar')
+let btnLimpar = document.querySelector('#btnLinpar')
 
 //Selecione caixas de texto por id
 let cxNota1 = document.querySelector('#nota1')
-let cxNota2 = document.querySelector('#nota1')
+let cxNota2 = document.querySelector('#nota2')
 let cxMedia = document.querySelector('#media')
 let cxSituacao = document.querySelector('#situacao')
 
@@ -18,11 +18,21 @@ function calcularMedia(n1, n2) {
 }
 
 // Calcular a media apos o click 
-btnCalcular.addEventListener(click, function(e) {
-  // pegar o valor que esta dentro das caixas
+btnCalcular.addEventListener('click', function(e) {
+  e.preventDefault()
+  // pegar os valores que estão dentro das caixas
   //usar metodo parseFloat no <p> para converter string p pra float
   let nota1 = parseFloat(cxNota1.value)
   let nota2 = parseFloat(cxNota2.value)
+  let media = calcularMedia(nota1, nota2)
+
+  if(isNaN(media) || media < 0) {
+    cxSituacao.value = ''
+  } else {
+    cxMedia.value = parseFloat(media)
+    //cxSituacao.value = situacaoFinal(media)//criar situacaoFinal
+    //formatarSituacao(situacaoFinal(media))//criar formatarsituacao para formatar (situacaoFinal)
+  }
 })
 
 
