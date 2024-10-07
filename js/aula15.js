@@ -1,5 +1,5 @@
 /* Aulo 15 de js aplicação Calculadora de Media */
-// Selecione os elementos que deseja manipular
+// Selecione os elementos que deseja manipularr
 
 let formulario = document.querySelector('#form')
 
@@ -34,10 +34,51 @@ btnCalcular.addEventListener('click', function(e) {
     cxSituacao.value = ''
   } else {
     cxMedia.value = parseFloat(media)
-    //cxSituacao.value = situacaoFinal(media)//criar situacaoFinal
-    //formatarSituacao(situacaoFinal(media))//criar formatarsituacao para formatar (situacaoFinal)
-  }
+    cxSituacao.value = situacaoFinal(media)//criar situacaoFinal
+    formatarSituacao(situacaoFinal(media))//criar formatarsituacao para formatar (situacaoFinal)
+  } 
+
+
 })
+
+  // DEFINIR SITUACAO FINAL COM BASE NA MEDIA
+  function situacaoFinal(mediaFinal) {
+    let situacaoFinal = ''
+  
+    if (mediaFinal >= 7) {
+      situacaoFinal = 'Aprovado(a)'
+    } else if (mediaFinal < 5) {
+      situacaoFinal = 'Reprovado(a)'
+    } else {
+      situacaoFinal = 'Recuperação'
+    }
+    return situacaoFinal
+  
+  
+  }  
+// formatar a caixa de situação final
+// Função para formatar a aparência da situação final
+function formatarSituacao(situacaoFinal) {
+  switch(situacaoFinal) {
+    case 'Aprovado(a)':
+      cxSituacao.classList.remove('reprovado', 'recuperacao') // Remover classes anteriores
+      cxSituacao.classList.add('aprovado') // Adicionar classe aprovado
+      break
+
+    case 'Reprovado(a)':
+      cxSituacao.classList.remove('aprovado', 'recuperacao') // Remover classes anteriores
+      cxSituacao.classList.add('reprovado') // Adicionar classe reprovado
+      break
+
+    case 'Recuperação':
+      cxSituacao.classList.remove('aprovado', 'reprovado') // Remover classes anteriores
+      cxSituacao.classList.add('recuperacao') // Adicionar classe recuperacao
+      break
+
+    default:
+      cxSituacao.classList.remove('aprovado', 'reprovado', 'recuperacao') // Limpar classes se necessário
+  }
+}
 
 
 
@@ -75,7 +116,7 @@ let resul = document.querySelector('#resultado')
 /*Adicionar um escutador para o btnEnviar
 btnEnviar.addEventListener('click', function (e) {
 
-e.preventDefault()
+e.preventDefault() */
 
 /*Pegar os valores de cad input
    let num1 = parseFloat(cxNota1.value)
